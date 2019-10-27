@@ -1,0 +1,114 @@
+
+\chapter{Background}
+\label{chapter1}
+Eilenberg and Steenrod inspired the following
+axiomatic definition of a cohomology
+theory, intending to capture the
+nice properties
+of ordinary cohomology  [123123].
+\begin{defn}
+  An ordinary cohomology theory is a sequence of
+  functors
+  $E^i$ for $i\geq 0$ mapping a pair of
+  spaces $(X,A)$ to an abelian group
+  $E^i(X,A)$,
+  as well as natural maps
+  $\delta_i: E^i(A,\emptyset)
+  \to E^{i+1}(X,A)$ satisfying
+  the following axioms:
+  \begin{enumerate}
+  \item
+    given two homotopic maps
+    $f\simeq g:(X,A)\to (Y,B)$
+    the induced maps on cohomology groups
+    is the same
+  \item
+    To any pair $(X,A)$ there is
+    an associated long exact sequence:
+    %%
+    \[
+      \small
+    \begin{tikzcd}
+      \cdots \arrow[r]& E^{i}(X,A)\arrow[r,"q_*"]&
+      E^{i}(X,\emptyset) \arrow[r,"i_*"]& E^i(A
+      ,\emptyset)
+      \arrow[r,"\delta_i"] &E^{i+1}(X,A)\arrow[r]&\cdots
+    \end{tikzcd}
+    \]
+    %%
+    where $i_*$ and $q_*$ are the maps induced
+    by the inclusions $i: (A,\emptyset) \to
+    (X,\emptyset)$ and $q: (X,\emptyset)\to (X,A)$
+  \item 
+    (\textit{Excision})
+    Given any subspace $U\subset A \subset X$ then
+    the inclusion of \\$(X\setminus U, A\setminus U)
+    $ into $(X,A)$ induces an isomorphism on cohomology
+    groups
+    \[
+      \begin{tikzcd}
+        E^i(X,A)\arrow[r, "i_*"] & E^i(X\setminus U,
+        A\setminus U)
+      \end{tikzcd}
+    \]
+  \item (\textit{Additivity})
+    If $(X,A)$ is the disjoint union of subsets
+    $\{ (X_j,A_j) \}_{j\in J}$
+    then we get the following isomorphism for all
+    $i$:
+    \[
+      \begin{tikzcd}
+        E^i(X,A)\arrow[r, "\sim"] & \prod_{j\in J}
+        E^i(X_j,A_j)
+      \end{tikzcd}
+    \]
+  \item
+    (\textit{dimension}) $E^i(pt)=0$ for all $i>0$.
+  \end{enumerate}
+\end{defn}
+Let us drop the cumbersome notation
+$E^i(X,\emptyset)$ and simply write $E^i(X)$
+instead. 
+
+Unfortunately this definition
+(in particular the dimension axiom)
+is quite restrictive and it excludes many
+nice functors we might like to think of
+as cohomology theories, such as
+topological K-theory which
+has $K^{2i}(pt)\cong K^{0}(pt)\cong \mathbb{Z}$ for all
+$i\in \mathbb{Z}$. The next definition
+tries to rectify this problem:
+
+\begin{defn}
+  A \textit{generalised cohomology theory} is
+  a sequence of functors $E^i$ with maps
+  $\delta_i$ all as above which satisfies
+  axioms 1-4 of \textit{Definition 1.1}.
+\end{defn}
+
+Let us now consider a particular set of
+generalised cohomology theories with
+rather nice nice properties.
+
+\begin{defn}
+  A generalised cohomology theory $E$
+  is called an \textit{even periodic ring
+    theory} if it
+  satisfies the following properties:
+  \begin{enumerate}
+  \item $E^*(pt)$ is a commutative ring
+  \item $E^i(pt) = 0$ whenever $i$ is odd
+  \item there exists elements
+    $\beta\in E^{2}(pt)$ and $\beta^{-1}
+    \in E^{-2}(pt)$ such that $\beta\cdot \beta^{-1}
+    =1$ in $E^*(pt)$
+  \end{enumerate}
+\end{defn}
+
+The obvious example is once again K-theory.
+Indeed the properties in
+\textit{Definition 1.3} follow since
+$K^*(pt)\cong\mathbb{Z}
+[\alpha,\alpha^{-1}]$
+where 
